@@ -12,14 +12,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff;
-  padding: 10px 20px;
+  background: #333;
+
   color: white;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
+}
+.logo:hover {
+  background-color: #630f5e;
+  color: #ffd700;
 }
 
 .nav-links {
@@ -30,10 +34,13 @@ body {
 
 .nav-links li {
   padding: 15px 0;
+  position: relative;
 }
 
 .nav-links li a {
+  display: block;
   color: white;
+  padding: 10px 15px;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -43,26 +50,32 @@ body {
   color: #ffd700;
 }
 
+/* Hover effect */
+.nav-links a:hover {
+  background: #630f5e;
+}
+
 .nav-links.active {
   display: flex;
 }
 
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+/* Dropdown menu */
+.dropdown-menu {
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 100%; /* below About */
+  left: 0;
+  background: #571414;
+  list-style: none;
+  min-width: 150px;
 }
 
-/* Mobile view */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #007bff;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-  }
+/* Dropdown items */
+.dropdown-menu li a {
+  padding: 10px;
+}
+
+/* SHOW ONLY ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
